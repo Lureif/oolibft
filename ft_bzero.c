@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_strclass.c                                    :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brjorgen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/26 02:54:38 by brjorgen          #+#    #+#             */
-/*   Updated: 2020/02/26 03:51:39 by brjorgen         ###   ########.fr       */
+/*   Created: 2019/04/03 08:24:03 by brjorgen          #+#    #+#             */
+/*   Updated: 2020/03/05 19:11:20 by brjorgen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "oolibft.h"
 
-t_STR *init_str(char *s)
+void	ft_bzero(void *s, size_t n)
 {
-	t_STR	*str;
-	uint8_t i;
-
-	i = 0;
-	str = malloc(sizeof(t_STR));
-	str->content = ft_strndup(s, ft_strlen(s));
-	if (str == NULL)
-		return (NULL);
-	while (i < __STR_FN_NUMBER)
-	{
-		str->fn[i] = str_fn[i];
-		i++;
-	}
-	str->fn[STRLEN](str, NULL);
-//	str->fn[SPLIT]
-	return (str);
+	while (n--)
+		((char *)s)[n] = 0;
 }
