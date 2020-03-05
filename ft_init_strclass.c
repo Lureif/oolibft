@@ -6,7 +6,7 @@
 /*   By: brjorgen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 02:54:38 by brjorgen          #+#    #+#             */
-/*   Updated: 2020/03/05 20:56:14 by brjorgen         ###   ########.fr       */
+/*   Updated: 2020/03/05 20:58:14 by brjorgen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,7 @@ t_STR	*init_str(char *s)
 	if (!(str = malloc(sizeof(t_STR))))
 		return (NULL);
 	ft_bzero(str, sizeof(t_STR));
-	if (s)
-	{
-		if (!(str->content = ft_strndup(s, ft_strlen(s))))
-			return (NULL);
-	}
-	if (str == NULL)
+	if (!(str->content = ft_strndup(s, ft_strlen(s))))
 		return (NULL);
 	while (i < __STR_FN_NUMBER)
 	{
